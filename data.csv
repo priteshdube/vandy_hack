@@ -1,0 +1,11 @@
+Country,Tariff Imposed by US (%),Top Product Categories,Specific Product Names,Estimated Annual Import Value (Billion USD),Alternative Suppliers,Use Case Impact
+China,54,"Electronics, Apparel, Toys","Apple iPhones, Lenovo laptops, Nike shoes, Mattel toys",500,"Vietnam, South Korea, India","Consumer electronics, daily clothing, children's goods"
+Mexico,25,"Vehicles, Machinery, Agricultural Products","General Motors cars, Caterpillar machinery, Avocados",400,"Brazil, Canada","Transportation, construction, food prices"
+Canada,25,"Energy Resources, Vehicles, Machinery","Crude oil, Ford cars, John Deere equipment",350,"Saudi Arabia, Mexico","Fuel prices, farming, transportation"
+Japan,34,"Automobiles, Electronics, Machinery","Toyota Camry, Sony electronics, Hitachi excavators",200,"South Korea, Germany","Car prices, industrial electronics"
+Germany,30,"Automobiles, Pharmaceuticals, Machinery","BMW 3 Series, Bayer medications, Siemens turbines",180,"Japan, UK","Luxury vehicles, medications, infrastructure"
+India,36,"Pharmaceuticals, Textiles, Software Services","Generic drugs, Cotton garments, Infosys software",150,"Bangladesh, Vietnam","Healthcare affordability, clothing"
+South Korea,35,"Electronics, Automobiles, Semiconductors","Samsung phones, Hyundai cars, SK Hynix chips",170,"Taiwan, Japan",Smartphone and car costs
+Vietnam,56,"Clothing, Electronics, Footwear","Nike apparel, LG TVs, Adidas sneakers",120,"Bangladesh, China",Retail clothing and home electronics
+Taiwan,42,"Semiconductors, Machinery, Electronics","TSMC chips, ASUS laptops, Foxconn components",100,"South Korea, USA (Intel)",Tech manufacturing and consumer devices
+Thailand,46,"Automotive parts, Electronics, Rubber","Honda car parts, Sharp TVs, Latex gloves",90,"Malaysia, Indonesia","Automobile maintenance, healthcare supplies"
