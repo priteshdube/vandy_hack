@@ -7,8 +7,6 @@ from google import genai
 client = genai.Client(api_key=st.secrets["gemini"]["api_key"])
 
 
-
-
 st.set_page_config(page_title="Tariff Explainer Chatbot", layout="wide")
 st.title("📦 U.S. Tariff Impact Visualizer + Economic Chatbot")
 st.caption("Explore how tariffs affect imports, prices, and supply chains.")
@@ -129,21 +127,32 @@ if prompt := st.chat_input("Ask me about economic policy, tariffs, or trade...")
     else:
         # Prepare the prompt for Gemini
         context = f"""
-        You are an AI economic policy explainer. Your primary focus is on U.S. tariffs, their impact on import values, product prices, and related economic policies.
-        
-        Here is the current tariff information for {country}:
-        Tariff Imposed by US: {selected['Tariff Imposed by US (%)']}%
-        Estimated Annual Import Value: ${selected['Estimated Annual Import Value (Billion USD)']} Billion
-        Top Product Categories: {selected['Top Product Categories']}
-        Specific Products: {selected['Specific Product Names']}
-        Use Case Impact: {selected['Use Case Impact']}
-        Alternative Suppliers: {selected['Alternative Suppliers']}
+                You are an AI assistant that explains **economic policy and U.S. tariffs** in a clear, conversational way. 
+                You help users understand the **impact of tariffs, import policies, trade dynamics**, and **economic consequences** for the selected country ({country}).
 
-        You should only answer questions that are directly related to these topics. If a question is outside of this scope, politely decline to answer.
+                You are allowed to answer:
+                - Direct or indirect questions about tariffs, pricing, trade, economic relations, or product availability
+                - Questions about related implications for U.S. consumers, businesses, and global trade
+                - Requests for links or resources to learn more
 
+                You should politely decline questions that are completely off-topic (e.g., unrelated jokes, weather, or celebrities).
 
-        Here is the conversation history:
-        """
+                ---
+
+                📊 Current data for {country}:
+                - Tariff Imposed by US: {selected['Tariff Imposed by US (%)']}%
+                - Estimated Annual Import Value: ${selected['Estimated Annual Import Value (Billion USD)']} Billion
+                - Top Product Categories: {selected['Top Product Categories']}
+                - Specific Products: {selected['Specific Product Names']}
+                - Use Case Impact: {selected['Use Case Impact']}
+                - Alternative Suppliers: {selected['Alternative Suppliers']}
+
+                ---
+
+                📚 You may also use your broader knowledge or internet-trained data to expand answers when the dataset is not enough.
+
+                Here is the current conversation:
+                """
         for msg in st.session_state["messages"][:-1]:  # Exclude the current user prompt
             context += f"{msg['role']}: {msg['content']}\n"
 
@@ -169,10 +178,10 @@ if prompt := st.chat_input("Ask me about economic policy, tariffs, or trade...")
                     if ask_for_resources:
                         st.subheader("📚 Explore Further")
                         if country:
-                            st.markdown(f"- [U.S. International Trade Commission on trade with {country}](https://www.usitc.gov/)") # Replace with actual relevant links
+                            st.markdown(f"- [U.S. International Trade Commission](https://www.usitc.gov/)") 
                             st.markdown("- [Bureau of Economic Analysis (BEA)](https://www.bea.gov/)")
-                            st.markdown("- [Congressional Research Service Reports on Trade](https://crsreports.congress.gov/)") # Example
-                        st.markdown("- [World Trade Organization (WTO)](https://www.wto.org/)")
+                            st.markdown("- [World Trade Organization (WTO)](https://www.wto.org/)")
+                            st.markdown("- [Full list of tariff](https://www.cbsnews.com/news/trump-reciprocal-tariffs-liberation-day-list/)")
 
             except Exception as e:
                 st.error(f"Error: {e}")
